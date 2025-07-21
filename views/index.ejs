@@ -1,0 +1,26 @@
+<% layout('boilerplate') %>
+<h1>All Foodposts</h1>
+<div>
+<% for (let foodpost of foodposts) { %>
+    <div class="card mb-3">
+        <div class="row">
+            <div class="col-md-4">
+                <% if (foodpost.Images.length) { %>
+
+                     <img src="/uploads/<%= foodpost.Images[0].filename %>" width="400">
+                <% } else { %>
+                    <img class="img-fluid" width="400" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                <% } %>
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title"><%= foodpost.title %></h5>
+                    <p class="card-text"><%= foodpost.description %></p>
+                    <p class="card-text"><%= foodpost.location %></p>
+                    <a class="btn btn-primary" href="/foodposts/<%= foodpost._id %>">View</a>
+                </div>
+            </div>
+        </div>
+    </div>
+<% } %>
+</div>
