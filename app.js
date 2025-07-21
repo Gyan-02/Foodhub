@@ -7,7 +7,7 @@ const ExpressError = require("./utils/ExpressError");
 
 async function mongo_connect() {
     try {
-        await mongoose.connect("mongodb+srv://user1:pass1@cluster1.ddwffa4.mongodb.net/gg_foodhub");
+        await mongoose.connect("mongodb+srv://user1:.....");
         console.log("Database connected");
     } catch (err) {
         console.log("Connection error:", err);
